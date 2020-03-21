@@ -1,0 +1,47 @@
+@import 'variables';
+
+.ui{
+
+    .form{
+        .field{
+            > label{
+                color:$primary-color;
+            }
+        }
+
+        
+    }
+}
+
+.ui{
+    &.form{
+        .field{
+            input{
+                border:none;
+                border-bottom: 1px solid lighten($primary-color, 20%);
+
+                &:focus{
+                    border-bottom: 1px solid darken($primary-color, 20%);
+                }
+            }
+        }
+    }
+}
+
+.ui{
+    &.primary{
+        &.button{
+            border-radius: 18px;
+        }
+    }
+
+    &.secondary{
+        &.button{
+            border-radius: 18px;
+        }
+    }
+
+    &.button{
+        border-radius: 18px;
+    }
+}

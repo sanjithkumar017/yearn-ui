@@ -1,0 +1,8 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@inputBorderRadius:0;
+@inputBackground:transparent;
+
+@inputFocusBorderColor:#444444;

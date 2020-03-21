@@ -1,12 +1,16 @@
 // https://coolors.co/386150-242f40-f2a541-ffeedb-c62d44
+// https://dribbble.com/shots/4213617-Sign-up-UI
+
+@import './styles/variables';
+@import './styles/base_element';
 
 html,body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#f6f6f6;
-  color:#444444;
+  background-color:$secondary-color;
+  color:$primary-color;
   height:100%
 }
 
@@ -35,85 +39,82 @@ html,body {
       text-transform: uppercase;
       grid-column: 1/2;
     }
-  
-    .right-container{ 
-      grid-column: 3/-1;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-  
-      .menu{
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding:0 20px;
-      }
-    }
-  }
-
-  .app-landing{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height:calc(100vh - 10rem);
-  
-    .app-description{
-      width: 280px;
-      text-transform: capitalize;
-      font-size: 41px;
-      font-weight: 500;
-      line-height: initial;
-      
-  
-      .app-inner-description{
-        color: #757575;
-        margin-top: 10px;
-        text-transform: capitalize;
-        font-size: 12px;
-        font-weight: 400;
-      }
-    }
   }
 }
 
-.app-landing-icon{
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.sign-on-actions{
-  margin-top: 20px;
+.app-landing{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  justify-content: flex-start;
+  align-items: flex-end;
+  height:calc(100vh - 10rem);
 
-.ui{
-  &.primary{
-    &.button{
-      background-color: #C62D44;
-      color:#f6f6f6;
+  .app-description{
+    width: 280px;
+    text-transform: capitalize;
+    font-size: 41px;
+    font-weight: 500;
+    line-height: initial;
+    
+
+    .app-inner-description{
+      color: #757575;
+      margin-top: 10px;
+      text-transform: capitalize;
+      font-size: 12px;
+      font-weight: 400;
     }
   }
 }
 
-.primary-link{
-  color:#444444; 
-  font-size: 16px;
-  text-decoration: underline;
+.right-container{ 
+  grid-column: 3/-1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  .menu{
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding:0 20px;
+  }
+
+  .right-menu-icon{
+    display: none;
+  }
 }
 
 .app-signon-container{
   display: flex;
   justify-content: center;
-  align-items: center;
-  
-  .ui.segment{
-    background-color: whitesmoke;
-  }
+  align-items: flex-start;
+  padding-top: 7.5rem;
+
   &.smaller-res{
     display: none;
+  }
+
+}
+
+.sign-on-segment{
+  background-color: darken($secondary-color,2%);
+  flex:.8;
+  padding:20px;
+}
+
+.sign-on-options-container{
+  margin-bottom: 40px;
+}
+
+.primary-link{
+  color:lighten($primary-color, 20%);
+  font-size: 16px;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 10px;
+  &:hover{
+    color:darken($primary-color, 20%);
+    text-decoration: underline;
   }
 }
 
@@ -126,7 +127,7 @@ html,body {
     &.smaller-res{
       display: block;
       margin-bottom: 30px;
-      height: calc(100vh - 30rem);
+      padding-top: unset;
     }
   }
 
@@ -144,4 +145,17 @@ html,body {
     display: grid;
     grid-template-columns: repeat(1,1fr);
   }
+
+  .right-container{
+    align-items: flex-start;
+
+    .right-menu-icon{
+      display: block;
+    }
+
+    .menu{
+      display: none;
+    }
+  }
+  
 }
